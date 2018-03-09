@@ -9,6 +9,10 @@ If we use to check if which ad is pleasing customers among many ads then we can 
 - Our goal is to minimize the total rewards we get over many rounds
 
 Steps :
+
+
+
+
 ![down](https://scontent.fccu3-1.fna.fbcdn.net/v/t1.0-9/19113894_185190832228130_7660961285161249482_n.jpg?oh=bfc875486be07a2258539488f9f01e76&oe=5AE5626F)
 
 # Comparison between UCB and Thompson Sampling :
