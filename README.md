@@ -1,20 +1,51 @@
-# Upper-Confidence-Bounds
-I implemented the reinforcement learning based model Upper Confidence Bound in both Python and R
+# 🎰 Upper Confidence Bound (UCB)
 
-If we use to check if which ad is pleasing customers among many ads then we can use the reinforcement learning approach :
-- Let we have <i>X</i> ads to display to a customer when he connects to Web
-- Each time an user logs in we consider it an round
-- At each round<i>n</i> we choose one ad to display to the user
-- At each round n , ad gives reward Ri(n)is the superset of {0,1} : Ri(n) = 1 , if the user clicked on the ad and 0 if the user didn't clicked .
-- Our goal is to minimize the total rewards we get over many rounds
+A clean implementation of the **Upper Confidence Bound** algorithm — a reinforcement learning approach for solving the multi-armed bandit problem. Available in both Python and R.
 
-Steps :
+## What it does
 
+UCB tackles the **exploration vs. exploitation** tradeoff in ad click-through rate (CTR) optimization. Given 10 ads and 10,000 user rounds, the algorithm learns which ad maximizes clicks without wasting too many rounds on underperforming options.
 
+The core idea: pick the ad with the highest upper confidence bound, balancing the observed reward with an exploration bonus that shrinks as an ad gets more selections.
 
+## Tech Stack
 
-![down](https://scontent.fccu3-1.fna.fbcdn.net/v/t1.0-9/19113894_185190832228130_7660961285161249482_n.jpg?oh=bfc875486be07a2258539488f9f01e76&oe=5AE5626F)
+| Language | Libraries |
+|----------|-----------|
+| Python 3 | `numpy`, `matplotlib`, `pandas` |
+| R        | Base R (no external packages) |
 
-# Comparison between UCB and Thompson Sampling :
+## Quick Start
 
-![down](https://scontent.fccu3-1.fna.fbcdn.net/v/t1.0-9/26991750_185190595561487_5082930645105234791_n.jpg?oh=7f0d38a0627b7f0be633d7f334044210&oe=5AE2471B)
+### Python
+
+```bash
+pip install numpy matplotlib pandas
+python upper_confidence_bound.py
+```
+
+### R
+
+```bash
+Rscript upper_confidence_bound.R
+```
+
+Both scripts output a histogram showing how often each ad was selected — you'll see the algorithm converge on the best-performing ad.
+
+## Dataset
+
+`Ads_CTR_Optimisation.csv` — a simulated dataset of 10,000 rounds × 10 ads. Each cell is binary (1 = user clicked, 0 = didn't click). The dataset must be in the same directory as the scripts.
+
+## Project Structure
+
+```
+├── upper_confidence_bound.py   # Python implementation
+├── upper_confidence_bound.R    # R implementation
+├── Ads_CTR_Optimisation.csv    # Simulated ad CTR dataset
+├── LICENSE                     # MIT License
+└── README.md
+```
+
+## License
+
+MIT © [Kaustabh Ganguly](https://github.com/stabgan)
